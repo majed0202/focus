@@ -12,7 +12,7 @@
   "currency": "$",
   "whatsapp": {
     "number": "963942074083",
-    "orderLink": "https://example.com/order",
+    "orderLink": "https://wa.me/963942074083?utm_source=chatgpt.com",
     "itemFormat": "• {name} × {qty} = {subtotal}{link}",
     "template": "مرحباً، أود طلب:\n{items}\n\nالمجموع: {total}\nرابط الطلب: {orderLink}"
   },
@@ -33,10 +33,10 @@
   "theme": {
     "ink": "#0f0e0c",
     "ivory": "#f7f3ec",
-    "gold": "#b8924a",
-    "gold-soft": "#e6d3a8",
+    "gold": "#4b58b9",
+    "gold-soft": "#a8e6d3",
     "card": "#fffdf9",
-    "muted": "#7a7166",
+    "muted": "#7a667a",
     "line": "#e8dfcf"
   }
 }
