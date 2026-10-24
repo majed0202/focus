@@ -21,8 +21,14 @@
     "shop": true
   },
   "links": [
-    {"label": "المجموعة", "url": "#shop"},
-    {"label": "تواصل معنا", "url": "https://wa.me/966500000000"}
+    {
+      "label": "المجموعة",
+      "url": "#shop"
+    },
+    {
+      "label": "تواصل معنا",
+      "url": "https://wa.me/966500000000"
+    }
   ],
   "theme": {
     "ink": "#0f0e0c",
