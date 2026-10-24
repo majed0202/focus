@@ -1,17 +1,17 @@
 {
   "brand": {
-    "name": "Maison Or",
-    "logo": "MAISON OR",
+    "name": "focus",
+    "logo": "focus",
     "eyebrow": "COLLECTION 2026",
-    "heroTitle": "أناقة تتجاوز الزمن",
-    "heroText": "مجموعة مختارة بعناية تجمع بين الحرفية الكلاسيكية وروح العصر الحديث.",
+    "heroTitle": "استعد وقتك الضائع!",
+    "heroText": "منتج مختار بعناية لاعادة الوقت الضائع ",
     "heroButton": "تسوّق المجموعة",
     "shopTitle": "المجموعة",
-    "footer": "© {year} Maison Or · جميع الحقوق محفوظة"
+    "footer": "© {year} focus · جميع الحقوق محفوظة"
   },
-  "currency": "ر.س",
+  "currency": "$",
   "whatsapp": {
-    "number": "966500000000",
+    "number": "963942074083",
     "orderLink": "https://example.com/order",
     "itemFormat": "• {name} × {qty} = {subtotal}{link}",
     "template": "مرحباً، أود طلب:\n{items}\n\nالمجموع: {total}\nرابط الطلب: {orderLink}"
