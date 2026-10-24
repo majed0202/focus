@@ -1,1 +1,15 @@
-[]
+[
+  {
+    "id": "p_mvmn8rij",
+    "order": 0,
+    "name": "صندوق قفل الجهاز",
+    "category": "",
+    "price": 15,
+    "stock": 45,
+    "image": "https://drive.google.com/file/d/1uZjZ7DUBKqJS1aOoyi2mD7GQ2MayUY5z/view?usp=sharing",
+    "link": "",
+    "badge": "جديد",
+    "description": "مواصفات بطارية وتأمين صندوق Stay Focuse:\nنظام القفل: قفل رقمي ذكي يمنع فتح الهاتف حتى 12 ساعة متواصلة.\nنوع البطارية: بطارية ليثيوم قابلة للشحن عالية الكفاءة (تدوم طويلاً).\nطريقة الشحن: مزود بمدخل كابل شحن عريض وسريع لسهولة وبساطة الاستخدام",
+    "active": true
+  }
+]
