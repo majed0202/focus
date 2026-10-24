@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Maison Or | لوحة التحكم</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+<!-- شاشة الدخول -->
+<div id="login">
+  <form class="box" id="loginForm">
+    <h2>لوحة التحكم</h2>
+    <label>كلمة المرور<input type="password" id="pw" required autocomplete="current-password"></label>
+    <button class="btn solid full">دخول</button>
+    <div class="err" id="loginErr"></div>
+  </form>
+</div>
+
+<div id="app" class="hidden">
+  <div class="top">
+    <b>MAISON OR · ADMIN</b>
+    <div>
+      <a href="index.html" target="_blank" class="link">عرض المتجر</a>
+      <button class="btn" id="logoutBtn">خروج</button>
+    </div>
+  </div>
+
+  <nav class="tabs">
+    <button data-tab="products" class="active">المنتجات</button>
+    <button data-tab="settings">الإعدادات</button>
+    <button data-tab="publish">النشر</button>
+  </nav>
+
+  <div class="statebar" id="stateBar"></div>
+
+  <!-- ===== المنتجات ===== -->
+  <main class="tab" id="tab-products">
+    <section>
+      <div class="stats">
+        <div class="stat"><span>عدد المنتجات</span><b id="sTotal">0</b></div>
+        <div class="stat"><span>منتجات ظاهرة</span><b id="sActive">0</b></div>
+        <div class="stat"><span>قيمة المخزون</span><b id="sValue">0</b></div>
+      </div>
+      <div class="panel">
+        <h2>قائمة المنتجات</h2>
+        <table>
+          <thead><tr><th>الاسم</th><th>الفئة</th><th>السعر</th><th>المخزون</th><th>الحالة</th><th></th></tr></thead>
+          <tbody id="rows"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <aside class="panel">
+      <h2 id="formTitle">إضافة منتج</h2>
+      <form id="pForm">
+        <label>الاسم<input data-field="name" required></label>
+        <label>الفئة<input data-field="category" placeholder="ساعات، حقائب، عطور..."></label>
+        <div class="two">
+          <label>السعر<input data-field="price" type="number" min="0" step="0.01" required></label>
+          <label>المخزون<input data-field="stock" type="number" min="0" value="0"></label>
+        </div>
+        <label>رابط الصورة<input data-field="image" type="url" placeholder="https://..."></label>
+        <label>رابط المنتج<input data-field="link" type="url" placeholder="https://..."><small class="help">يُرسل مع الطلب في واتساب</small></label>
+        <label>شارة (اختياري)<input data-field="badge" placeholder="جديد / حصري"></label>
+        <label>الوصف<textarea data-field="description" rows="3"></textarea></label>
+        <label class="check"><input type="checkbox" data-field="active" checked> ظاهر في المتجر</label>
+        <div class="actions">
+          <button class="btn solid" type="submit">حفظ</button>
+          <button class="btn" type="button" id="resetBtn">جديد</button>
+        </div>
+      </form>
+    </aside>
+  </main>
+
+  <!-- ===== الإعدادات ===== -->
+  <main class="tab hidden" id="tab-settings">
+    <form id="settingsForm">
+      <div class="panel">
+        <h2>العلامة والنصوص</h2>
+        <label>اسم المتجر<input data-path="brand.name"></label>
+        <label>الشعار (نص)<input data-path="brand.logo"></label>
+        <label>السطر العلوي<input data-path="brand.eyebrow"></label>
+        <label>عنوان الواجهة<input data-path="brand.heroTitle"></label>
+        <label>نص الواجهة<textarea rows="2" data-path="brand.heroText"></textarea></label>
+        <label>زر الواجهة<input data-path="brand.heroButton"></label>
+        <label>عنوان قسم المنتجات<input data-path="brand.shopTitle"></label>
+        <label>نص الفوتر<input data-path="brand.footer"><small class="help">{year} تُستبدل بالسنة تلقائياً</small></label>
+      </div>
+
+      <div class="panel" style="margin-top:20px">
+        <h2>الطلب عبر واتساب</h2>
+        <label>رقم واتساب<input data-path="whatsapp.number"><small class="help">بالصيغة الدولية بدون + ومسافات</small></label>
+        <label>العملة<input data-path="currency"></label>
+        <label>الرابط الإضافي للطلب<input type="url" data-path="whatsapp.orderLink"><small class="help">يظهر في الرسالة عبر {orderLink}</small></label>
+        <label>شكل السطر لكل منتج<input data-path="whatsapp.itemFormat"><small class="help">{name} {qty} {price} {subtotal} {link}</small></label>
+        <label>قالب الرسالة<textarea rows="5" data-path="whatsapp.template"></textarea>
+          <small class="help">{items} {total} {orderLink} {brand}</small></label>
+      </div>
+    </form>
+
+    <aside>
+      <div class="panel">
+        <h2>الأقسام والروابط</h2>
+        <form id="sectionsForm">
+          <label class="check"><input type="checkbox" data-path="sections.hero"> إظهار الواجهة الرئيسية</label>
+          <label class="check"><input type="checkbox" data-path="sections.shop"> إظهار قسم المنتجات</label>
+        </form>
+        <label style="margin-top:12px">روابط القائمة (كل سطر: الاسم|الرابط)
+          <textarea rows="4" data-path="links" data-type="lines"></textarea></label>
+      </div>
+
+      <div class="panel" style="margin-top:20px">
+        <h2>الألوان</h2>
+        <div class="colors">
+          <label>الأسود<input type="color" data-path="theme.ink"></label>
+          <label>العاجي<input type="color" data-path="theme.ivory"></label>
+          <label>الذهبي<input type="color" data-path="theme.gold"></label>
+          <label>الذهبي الفاتح<input type="color" data-path="theme.gold-soft"></label>
+          <label>البطاقات<input type="color" data-path="theme.card"></label>
+          <label>النص الثانوي<input type="color" data-path="theme.muted"></label>
+          <label>الحدود<input type="color" data-path="theme.line"></label>
+        </div>
+      </div>
+
+      <div class="panel" style="margin-top:20px">
+        <h2>معاينة الرسالة</h2>
+        <pre id="preview"></pre>
+      </div>
+    </aside>
+  </main>
+
+  <!-- ===== النشر ===== -->
+  <main class="tab hidden" id="tab-publish">
+    <section>
+      <div class="panel">
+        <h2>النشر المباشر إلى GitHub</h2>
+        <p class="muted">يحفظ settings.json و products.json مباشرة في المستودع. التوكن يُحفظ في الجلسة الحالية فقط.</p>
+        <div class="two">
+          <label>اسم المستخدم<input id="ghOwner" placeholder="your-username"></label>
+          <label>اسم المستودع<input id="ghRepo" placeholder="maison-or"></label>
+          <label>الفرع<input id="ghBranch" value="main"></label>
+          <label>توكن GitHub<input id="ghToken" type="password" autocomplete="off"><small class="help">Fine-grained token، صلاحية Contents: Read and write على هذا المستودع فقط</small></label>
+        </div>
+        <div class="actions">
+          <button class="btn solid" id="publishBtn">نشر التغييرات</button>
+        </div>
+        <div class="status" id="ghStatus"></div>
+      </div>
+    </section>
+
+    <aside>
+      <div class="panel">
+        <h2>النسخ اليدوي</h2>
+        <p class="muted">إن لم تستخدم GitHub المباشر، صدّر الملفين وارفعهما إلى مجلد <code>data/</code> يدوياً.</p>
+        <div class="actions">
+          <button class="btn solid" id="exportBtn">تصدير الملفين</button>
+          <button class="btn" id="importBtn">استيراد ملف JSON</button>
+          <input type="file" id="imp" accept="application/json" hidden>
+        </div>
+        <hr style="margin:22px 0;border:0;border-top:1px solid var(--line)">
+        <button class="btn danger" id="discardBtn">تجاهل التغييرات غير المنشورة</button>
+      </div>
+    </aside>
+  </main>
+</div>
+
+<script src="js/config.js"></script>
+<script src="js/common.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>

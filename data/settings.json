@@ -1,0 +1,36 @@
+{
+  "brand": {
+    "name": "Maison Or",
+    "logo": "MAISON OR",
+    "eyebrow": "COLLECTION 2026",
+    "heroTitle": "أناقة تتجاوز الزمن",
+    "heroText": "مجموعة مختارة بعناية تجمع بين الحرفية الكلاسيكية وروح العصر الحديث.",
+    "heroButton": "تسوّق المجموعة",
+    "shopTitle": "المجموعة",
+    "footer": "© {year} Maison Or · جميع الحقوق محفوظة"
+  },
+  "currency": "ر.س",
+  "whatsapp": {
+    "number": "966500000000",
+    "orderLink": "https://example.com/order",
+    "itemFormat": "• {name} × {qty} = {subtotal}{link}",
+    "template": "مرحباً، أود طلب:\n{items}\n\nالمجموع: {total}\nرابط الطلب: {orderLink}"
+  },
+  "sections": {
+    "hero": true,
+    "shop": true
+  },
+  "links": [
+    {"label": "المجموعة", "url": "#shop"},
+    {"label": "تواصل معنا", "url": "https://wa.me/966500000000"}
+  ],
+  "theme": {
+    "ink": "#0f0e0c",
+    "ivory": "#f7f3ec",
+    "gold": "#b8924a",
+    "gold-soft": "#e6d3a8",
+    "card": "#fffdf9",
+    "muted": "#7a7166",
+    "line": "#e8dfcf"
+  }
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Maison Or</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Tajawal:wght@300;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+  <div class="logo" data-bind="brand.logo"></div>
+  <nav id="nav"></nav>
+  <button class="btn" id="cartBtn">السلة (<span id="count">0</span>)</button>
+</header>
+
+<section class="hero" data-section="hero">
+  <small class="eyebrow" data-bind="brand.eyebrow"></small>
+  <h1 data-bind="brand.heroTitle"></h1>
+  <div class="divider"></div>
+  <p data-bind="brand.heroText"></p>
+  <a href="#shop" class="btn solid" data-bind="brand.heroButton"></a>
+</section>
+
+<section id="shop" data-section="shop">
+  <h2 class="section-title" data-bind="brand.shopTitle"></h2>
+  <div class="grid" id="grid"></div>
+</section>
+
+<footer data-bind="brand.footer"></footer>
+
+<div class="overlay" id="overlay"></div>
+<aside class="drawer" id="drawer">
+  <h2>سلة التسوق</h2>
+  <div class="items" id="items"></div>
+  <div class="total"><span>المجموع</span><span id="total">0</span></div>
+  <button class="btn solid" id="checkoutBtn">إتمام الطلب عبر واتساب</button>
+  <button class="btn" id="closeCart" style="margin-top:10px">إغلاق</button>
+</aside>
+
+<script src="js/common.js"></script>
+<script src="js/store.js"></script>
+</body>
+</html>
